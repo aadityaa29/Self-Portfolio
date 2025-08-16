@@ -36,10 +36,10 @@ export default function Home() {
               Full‑stack developer crafting futuristic, animated, and accessible web experiences.
             </motion.p>
             <div className="mt-6 flex gap-3">
-              <Button asChild>
+              <Button>
                 <Link href="#projects">View Projects</Link>
               </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline">
                 <Link href="#contact">Contact Me</Link>
               </Button>
             </div>

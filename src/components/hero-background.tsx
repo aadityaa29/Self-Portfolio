@@ -22,8 +22,7 @@ export function HeroBackground() {
     resize();
     window.addEventListener("resize", resize);
 
-    let t = 0;
-    const particles = Array.from({ length: 80 }, () => ({
+const particles = Array.from({ length: 80 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       r: Math.random() * 2 + 0.5,
@@ -31,8 +30,7 @@ export function HeroBackground() {
       vy: (Math.random() - 0.5) * 0.5,
     }));
 
-    function loop() {
-      t += 0.005;
+function loop() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const grad = ctx.createLinearGradient(0, 0, window.innerWidth, window.innerHeight);
       grad.addColorStop(0, "#0ea5e933");

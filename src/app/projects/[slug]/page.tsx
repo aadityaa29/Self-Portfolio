@@ -8,19 +8,21 @@ export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const p = projects.find((x) => x.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const p = projects.find((x) => x.slug === slug);
   return {
     title: p?.title ?? "Project",
     description: p?.description,
     openGraph: {
-      images: [`/api/og/${params.slug}`],
+      images: [`/api/og/${slug}`],
     },
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const p = projects.find((x) => x.slug === params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const p = projects.find((x) => x.slug === slug);
   if (!p) return notFound();
   return (
     <div className="container mx-auto px-6 py-16">
