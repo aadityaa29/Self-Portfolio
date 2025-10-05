@@ -9,8 +9,6 @@ export function Footer() {
           <Link href="https://github.com/aadityaa29" target="_blank" className="hover:underline">GitHub</Link>
           <Link href="https://linkedin.com/in/adityapachourii" target="_blank" className="hover:underline">LinkedIn</Link>
           <Link href="mailto:adityapachouri01@gmail.com" className="hover:underline">Email</Link>
-
-          
         </div>
       </div>
     </footer>
